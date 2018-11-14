@@ -25,4 +25,6 @@ FROM build
 WORKDIR /app
 COPY --from=build /app ./
 
+RUN mix compile
+
 CMD iex -S mix

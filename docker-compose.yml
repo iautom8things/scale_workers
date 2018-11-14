@@ -1,0 +1,34 @@
+version: "3.7"
+services:
+  worker1:
+    image: elixir_swarm_worker:latest
+    command: iex --sname app --cookie cookiemonster -S mix run start_workers.exs
+    labels:
+      - "libcluster_docker=true"
+    networks:
+      - default
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+
+  worker2:
+    image: elixir_swarm_worker:latest
+    command: iex --sname app --cookie cookiemonster -S mix run start_workers.exs
+    labels:
+      - "libcluster_docker=true"
+    networks:
+      - default
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+
+  worker3:
+    image: elixir_swarm_worker:latest
+    command: iex --sname app --cookie cookiemonster -S mix run start_workers.exs
+    labels:
+      - "libcluster_docker=true"
+    networks:
+      - default
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+
+networks:
+  default:

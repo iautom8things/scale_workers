@@ -24,7 +24,7 @@ defmodule ScaleWorkers.MixProject do
     [
       {:libcluster, "~> 3.0"},
       {:swarm, "~> 3.0"},
-      {:libcluster_docker, git: "https://github.com/mazubieta/libcluster_docker.git"}
+      {:libcluster_docker, "~> 0.2.0", git: "https://github.com/mazubieta/libcluster_docker.git"}
       # {:dep_from_hexpm, "~> 0.3.0"},
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"},
     ]

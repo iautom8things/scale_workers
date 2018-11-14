@@ -8,7 +8,8 @@ defmodule ScaleWorkers.Application do
   def start(_type, _args) do
     topologies = [
       swarm_example: [
-        strategy: ClusterDocker.Strategy.Service
+        strategy: ClusterDocker.Strategy.Service,
+        config: [polling_interval: 500]
       ]
     ]
 

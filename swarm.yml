@@ -3,6 +3,8 @@ services:
   worker:
     image: elixir_swarm_worker:latest
     command: iex --sname app --cookie cookiemonster -S mix run start_workers.exs
+    labels:
+      - "libcluster_docker=true"
     deploy:
       replicas: 2
     networks:
