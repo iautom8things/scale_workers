@@ -8,9 +8,11 @@ services:
     deploy:
       replicas: 2
     networks:
-      - default
+      - libcluster_docker
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
 
 networks:
-  default:
+  libcluster_docker:
+    external: true
+    name: libcluster_docker

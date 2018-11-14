@@ -6,7 +6,7 @@ services:
     labels:
       - "libcluster_docker=true"
     networks:
-      - default
+      - libcluster_docker
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
 
@@ -16,7 +16,7 @@ services:
     labels:
       - "libcluster_docker=true"
     networks:
-      - default
+      - libcluster_docker
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
 
@@ -26,9 +26,10 @@ services:
     labels:
       - "libcluster_docker=true"
     networks:
-      - default
+      - libcluster_docker
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
 
 networks:
-  default:
+  libcluster_docker:
+    external: true
